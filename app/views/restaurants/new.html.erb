@@ -1,5 +1,5 @@
 <%= form_tag("/restaurants", method: "post") do %>
-<%= label_tag(:name, "Restaurant name:") %>
+<%= label_tag(:name, "Restaurant name:") value:(@restaurant.name) %>
 <%= text_field_tag(:name) %>
 <%= label_tag(:rating, "Restaurant rating:") %>
 <%= radio_button_tag(:rating, "1") %>

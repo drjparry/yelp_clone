@@ -13,4 +13,14 @@ feature 'Yelp' do
     click_button('Add Restaurant')
     expect(page).to have_content('Carnegies 5')
   end
+
+  scenario 'allows users to edit restaurant' do
+    Restaurant.create(name: 'Mendy\'s', rating: '4')
+    visit('/restaurants')
+    click_link('Edit Mendy\'s')
+    fill_in(:name, with: 'Mharjiams')
+    choose(:rating, option: '3')
+    click_button('Submit')
+    expect(page).to have_content('Mharjiams 3')
+  end
 end

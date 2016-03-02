@@ -1,0 +1,7 @@
+<%= form_tag("/restaurants/update", method: "patch") do %>
+  <%= label_tag(:name, "Restaurant name:") %>
+  <%= text_field_tag(:name,"#{@restaurant.name}") %>
+  <%= label_tag(:rating, "Restaurant rating:") %>
+  <%= select_tag(:rating, options_for_select([["1", 1], ["2", 2], ["3", 3], ["4", 4], ["5", 5]], @restaurant.rating)) %>
+  <%= submit_tag("Submit") %>
+<% end %>
