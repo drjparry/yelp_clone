@@ -46,6 +46,7 @@ group :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'shoulda'
+  gem 'rspec-collection_matchers'
 end
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
