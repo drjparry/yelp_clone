@@ -1,3 +1,0 @@
-Yelp Challenge
-
-tbd
