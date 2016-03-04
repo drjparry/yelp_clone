@@ -1,5 +1,6 @@
 <% if @restaurant.errors.any? %>
   <section id="errors" >
+<<<<<<< HEAD
   <h2> <%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved </h2>
   <ul>
     <% @restaurant.errors.full_messages.each do |message| %>
@@ -8,8 +9,23 @@
   </ul>
   </section>
 <% end %>
+=======
+    <h2> <%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved: </h2>
+    <ul>
+      <% @restaurant.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>
+
+>>>>>>> b7fbbf4dfee6277dab38934bcedbf9cf3f3fbe9a
 <%= form_for @restaurant do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.submit %>
+<<<<<<< HEAD
 <% end %>
+=======
+<% end %> 
+>>>>>>> b7fbbf4dfee6277dab38934bcedbf9cf3f3fbe9a

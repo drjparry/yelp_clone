@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 <h1> <%= form_for [@restaurant, @review] do |f| %> </h1>
+=======
+<%= form_for [@restaurant, @review] do |f| %>
+>>>>>>> b7fbbf4dfee6277dab38934bcedbf9cf3f3fbe9a
   <%= f.label :thoughts %>
   <%= f.text_area :thoughts %>
   <%= f.label :rating %>
   <%= f.select :rating, (1..5) %>
+<<<<<<< HEAD
   <%= f.submit 'Leave review' %>
 <% end %>
+=======
+  <%= f.submit 'Leave Review' %>
+<% end %>
+>>>>>>> b7fbbf4dfee6277dab38934bcedbf9cf3f3fbe9a

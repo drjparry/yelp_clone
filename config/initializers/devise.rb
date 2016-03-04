@@ -1,16 +1,27 @@
+<<<<<<< HEAD
 require 'omniauth-facebook'
 
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
+=======
+# Use this hook to configure devise mailer, warden hooks and so forth.
+# Many of these configuration options can be set straight in your model.
+Devise.setup do |config|
+  config.omniauth :facebook, Rails.application.secrets.facebook_app_id, Rails.application.secrets.facebook_app_secret
+>>>>>>> b7fbbf4dfee6277dab38934bcedbf9cf3f3fbe9a
   # The secret key used by Devise. Devise uses this key to generate
   # random tokens. Changing this key will render invalid all existing
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` on Rails 4+ applications as its `secret_key`
   # by default. You can change it below and use your own secret key.
+<<<<<<< HEAD
   # config.secret_key = '5e684ce0ca38531b63f068afb177afbb1fe76538a74d49a39832e36342f987f116b5d209b7118a6cdc7e82fd41c138e7987f9d83405c3eca021cff54c051de28'
 
   config.omniauth :facebook, Rails.application.secrets.facebook_app_id, Rails.application.secrets.facebook_app_secret
+=======
+  # config.secret_key = '2834833bc1271ced8b1eacad1c5f7cc69496f2a943703b9c43840f5ab17ffc3bebf4b5d31020f794e7a101d86e10f149f8ae295a62bb687e0056a033ae6eb18a'
+>>>>>>> b7fbbf4dfee6277dab38934bcedbf9cf3f3fbe9a
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
@@ -103,7 +114,11 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 10
 
   # Setup a pepper to generate the encrypted password.
+<<<<<<< HEAD
   # config.pepper = '519c0dd8681481b8aa5532ae9f176bd1f875b17214e86015b4cafe68de524e934fd66c41fc196b2cee299d1c453657d6d7bdd69d531025716c2ddc3c2edb5ea1'
+=======
+  # config.pepper = 'fec0848f306d8b3686ddd008c111ad6057b27ce1664c52cab7703a84e2031ec581c2b1c08cd43797e8faf54b120d98fd13a2e1f016a28f5578b81cd91874a0b9'
+>>>>>>> b7fbbf4dfee6277dab38934bcedbf9cf3f3fbe9a
 
   # Send a notification email when the user's password is changed
   # config.send_password_change_notification = false

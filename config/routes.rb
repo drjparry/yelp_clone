@@ -1,18 +1,30 @@
 Rails.application.routes.draw do
+<<<<<<< HEAD
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
 
+=======
+  devise_for :users, controllers: { omniauth_callbacks: "users/omniauth_callbacks" }
+  
+  resources :restaurants do
+    resources :reviews
+  end
+>>>>>>> b7fbbf4dfee6277dab38934bcedbf9cf3f3fbe9a
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+<<<<<<< HEAD
 # resources :restaurants
 resources :restaurants do
   resources :reviews
 end
 
 root to: 'restaurants#index'
+=======
+  root to: "restaurants#index"
+>>>>>>> b7fbbf4dfee6277dab38934bcedbf9cf3f3fbe9a
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -7,16 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<<<<<<< HEAD
   <p class='notice'> <%= notice %> </p>
   <p class='alert'> <%= alert %> </p>
 <% if user_signed_in? %>
   <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
 <% else %>
+=======
+
+<%if user_signed_in? %>
+	<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+
+<% else %>
+  <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+>>>>>>> b7fbbf4dfee6277dab38934bcedbf9cf3f3fbe9a
   <%= link_to "Sign in", new_user_session_path %>
   <%= link_to "Sign up", new_user_registration_path %>
 <% end %>
 
+<<<<<<< HEAD
 
+=======
+<%= notice %>
+>>>>>>> b7fbbf4dfee6277dab38934bcedbf9cf3f3fbe9a
 <%= yield %>
 
 </body>

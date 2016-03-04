@@ -10,4 +10,10 @@ require 'rails_helper'
 #     end
 #   end
 # end
+<<<<<<< HEAD
 
+=======
+RSpec.describe RestaurantsHelper, type: :helper do
+  pending "add some examples to (or delete) #{__FILE__}"
+end
+>>>>>>> b7fbbf4dfee6277dab38934bcedbf9cf3f3fbe9a

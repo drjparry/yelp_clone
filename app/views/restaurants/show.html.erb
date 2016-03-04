@@ -1,13 +1,28 @@
+<<<<<<< HEAD
 <h1> <%= @restaurant.name %><h1>
 <h2> Reviews </h2>
+=======
+<p><%= @restaurant.name %></p>
+<p><%= @restaurant.description %></p>
+>>>>>>> b7fbbf4dfee6277dab38934bcedbf9cf3f3fbe9a
 <% if @restaurant.reviews.any? %>
   <ul>
   <% @restaurant.reviews.each do |review| %>
     <li>
+<<<<<<< HEAD
      <%= review.thoughts %>, <strong><%= review.rating %></strong>/5
      </li>
      <% end %>
   </ul>
 <% else %>
   <p>No reviews</p>s
+=======
+      <%= review.thoughts %>
+      <%= review.rating %>/5
+    </li>
+  </ul>
+  <% end %>
+<% else %>
+  <p>No reviews yet</p>
+>>>>>>> b7fbbf4dfee6277dab38934bcedbf9cf3f3fbe9a
 <% end %>

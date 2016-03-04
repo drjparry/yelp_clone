@@ -9,8 +9,11 @@ require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
 require "sprockets/railtie"
+<<<<<<< HEAD
 require 'devise'
 
+=======
+>>>>>>> b7fbbf4dfee6277dab38934bcedbf9cf3f3fbe9a
 # require "rails/test_unit/railtie"
 
 # Require the gems listed in Gemfile, including any gems
