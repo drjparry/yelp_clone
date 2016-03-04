@@ -46,6 +46,24 @@ feature "User can sign in and out" do
   end
 
 
+feature "Users can only add one review per restaurant" do
+  context "whilst logged in" do
+    it "cannot add more than one review for a single restaurant" do
+
+     sign_up
+     click_link 'Add a restaurant'
+     fill_in 'Name', with: 'KFC'
+     click_button 'Create Restaurant'
+     click_link('Sign out')
+     sign_up_second_user
+      click_link 'Review KFC'
+      fill_in 'Thoughts', with: 'so so'
+      select '3', from: 'Rating'
+      click_button 'Leave review'
+      expect(page).not_to have_link('Review KFC')
+    end
+  end
+end
 
 
 

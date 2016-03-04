@@ -5,9 +5,6 @@ class ReviewsController < ApplicationController
   @review = Review.new
   end
 
-if current_user.has_reviewed? @restaurant
-
-end
 
   def create
     @restaurant = Restaurant.find(params[:restaurant_id])
