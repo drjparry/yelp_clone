@@ -6,7 +6,8 @@ Rails.application.configure do
       :bucket => ENV['S3_BUCKET_NAME'],
       :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
       :secret_key_access => ENV['AWS_SECRET_ACCESS_KEY']
-    }
+    },
+    :s3_host_name => 's3-website.eu-central-1.amazonaws.com'
   }
   # In the development environment your application's code is reloaded on
   # every request. This slows down response time but is perfect for development
