@@ -10,4 +10,13 @@ describe Review, type: :model do
     review = Review.new(rating: 10)
     expect(review).to have(1).error_on(:rating)
   end
+
+  describe '#average_rating' do
+    context 'No reviews' do
+      it 'returns "N/A" when there are no reviews' do
+      restaurant = Restaurant.create(name: 'Ivy')
+      expect(restaurant.average_rating).to eq 'N/A'
+      end
+    end
+  end
 end

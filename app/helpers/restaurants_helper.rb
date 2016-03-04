@@ -1,7 +1,7 @@
 module RestaurantsHelper
   def sign_up
     click_link 'Sign up'
-    fill_in 'Email', with: 'test@test.com'
+    fill_in 'Email', with: 'apple@gmail.com'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
     click_button 'Sign up'
@@ -10,6 +10,14 @@ module RestaurantsHelper
   def sign_up_second_user
     click_link 'Sign up'
     fill_in 'Email', with: 'test@tester.com'
+    fill_in 'Password', with: 'password'
+    fill_in 'Password confirmation', with: 'password'
+    click_button 'Sign up'
+  end
+
+  def sign_up_third_user
+    click_link 'Sign up'
+    fill_in 'Email', with: 'new@gmail.com'
     fill_in 'Password', with: 'password'
     fill_in 'Password confirmation', with: 'password'
     click_button 'Sign up'

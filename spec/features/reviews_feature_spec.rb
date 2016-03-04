@@ -1,5 +1,6 @@
 require 'rails_helper'
 include RestaurantsHelper
+include ReviewsHelper
 
 feature 'reviewing' do
   before do
@@ -17,5 +18,15 @@ feature 'reviewing' do
     click_button 'Leave Review'
     expect(current_path).to eq '/restaurants'
     expect(page).to have_content 'so so'
+  end
+
+  scenario 'displays an average rating for all reviews' do
+    click_link 'Sign out'
+    sign_up_second_user
+    leave_review('so so', '3')
+    click_link 'Sign out'
+    sign_up_third_user
+    leave_review('great!', '5')
+    expect(page).to have_content 'Average rating: 4'
   end
 end
