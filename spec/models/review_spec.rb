@@ -26,5 +26,14 @@ describe Review, type: :model do
         expect(restaurant.average_rating).to eq 4
       end
     end
+
+    context 'multiple reviews' do
+      it 'returns the average' do
+        restaurant = Restaurant.create(name: 'Ivy')
+        restaurant.reviews.create(rating: 4)
+        restaurant.reviews.create(rating: 2)
+        expect(restaurant.average_rating).to eq 3
+      end
+    end
   end
 end
