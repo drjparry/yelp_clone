@@ -9,7 +9,7 @@ Rails.application.configure do
     }
   }
 
-  config.consider_all_requests_local = true
+
   # Code is not reloaded between requests.
   config.cache_classes = true
 
