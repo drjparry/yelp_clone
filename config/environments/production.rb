@@ -8,6 +8,8 @@ Rails.application.configure do
       :secret_key_access => ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
+
+  config.consider_all_requests_local = true
   # Code is not reloaded between requests.
   config.cache_classes = true
 
