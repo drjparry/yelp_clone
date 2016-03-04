@@ -2,6 +2,8 @@ require 'rails_helper'
 include RestaurantsHelper
 include ReviewsHelper
 
+# encoding: UTF-8
+
 feature 'reviewing' do
   before do
       visit '/restaurants'
@@ -27,6 +29,6 @@ feature 'reviewing' do
     click_link 'Sign out'
     sign_up_third_user
     leave_review('great!', '5')
-    expect(page).to have_content 'Average rating: 4'
+    expect(page).to have_content "Average rating: ★★★★☆"
   end
 end

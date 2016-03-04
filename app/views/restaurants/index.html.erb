@@ -3,6 +3,8 @@
     <h2>
       <%= link_to restaurant.name, restaurant_path(restaurant) %>
     </h2>
+    <h3>Average rating: <%= star_rating(restaurant.average_rating)  %></h3>
+
 
     <% if restaurant.reviews.any? %>
       <ul>
@@ -10,6 +12,7 @@
         <li>
           <%= review.thoughts %>
           <%= review.rating %>/5
+          <p><%= pluralize review.endorsements.count, 'endorsement' %></p>
           <% if review.user == current_user %>
             <%= link_to "Delete Review", restaurant_review_path(restaurant, review), method: :delete %>
           <% end %>

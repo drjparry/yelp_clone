@@ -49,6 +49,8 @@ group :test do
   gem 'capybara'
   gem 'shoulda'
   gem 'rspec-collection_matchers'
+  gem 'poltergeist'
+  gem 'database_cleaner'
 end
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
