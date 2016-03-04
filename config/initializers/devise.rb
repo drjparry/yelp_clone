@@ -1,3 +1,5 @@
+require 'omniauth-facebook'
+
 # Use this hook to configure devise mailer, warden hooks and so forth.
 # Many of these configuration options can be set straight in your model.
 Devise.setup do |config|
@@ -8,7 +10,7 @@ Devise.setup do |config|
   # by default. You can change it below and use your own secret key.
   # config.secret_key = '5e684ce0ca38531b63f068afb177afbb1fe76538a74d49a39832e36342f987f116b5d209b7118a6cdc7e82fd41c138e7987f9d83405c3eca021cff54c051de28'
 
-  config.omniauth :facebook,
+  config.omniauth :facebook, Rails.application.secrets.facebook_app_id, Rails.application.secrets.facebook_app_secret
 
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,

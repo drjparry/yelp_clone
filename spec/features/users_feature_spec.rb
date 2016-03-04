@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+
 feature "User can sign in and out" do
   context "user not signed in and on the homepage" do
     it "should see a 'sign in' link and a 'sign up' link" do
@@ -35,4 +36,17 @@ feature "User can sign in and out" do
       expect(page).not_to have_link('Sign up')
     end
   end
+
+  context 'unless logged in ' do
+    it 'shoulde not be able to create a new restaurant' do
+      visit '/'
+      click_link 'Add a restaurant'
+      expect(page).to have_content 'Log in'
+    end
+  end
+
+
+
+
+
 end

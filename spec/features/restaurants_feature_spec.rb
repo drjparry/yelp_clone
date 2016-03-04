@@ -1,4 +1,5 @@
 require 'rails_helper'
+include RestaurantsHelper
 
 feature 'restaurants' do
 	context 'no restaurants have been added' do
@@ -23,6 +24,7 @@ feature 'restaurants' do
 	context 'creating restaurants' do
 		scenario 'prompts user to fill out a form, then displays the new restaurant' do
 		visit '/restaurants'
+		sign_up
 		click_link 'Add a restaurant'
 		fill_in 'Name', with: 'KFC'
 		click_button 'Create Restaurant'
@@ -33,6 +35,7 @@ feature 'restaurants' do
 		context 'an invalid restaurant' do
 			it 'does not let you submit an incompleted form' do
 				visit '/restaurants'
+				sign_up
 				click_link 'Add a restaurant'
 		    fill_in 'Name', with: 'KF'
 		    click_button 'Create Restaurant'
@@ -53,10 +56,13 @@ feature 'restaurants' do
 	end
 
 	context 'updating restaurants' do
-		let!(:kfc){Restaurant.create(name:'KFC')}
 		scenario 'user can edit existing restaurant' do
 			visit '/restaurants'
-			click_link 'Edit'
+			sign_up
+			click_link 'Add a restaurant'
+		  fill_in 'Name', with: 'KFC'
+		  click_button 'Create Restaurant'
+			click_link 'Edit KFC'
 			fill_in 'Name', with: 'Maccas'
 			click_button 'Update Restaurant'
 			expect(page).to have_content 'Maccas'
@@ -64,17 +70,31 @@ feature 'restaurants' do
 	end
 
 	context 'deleting restaurants' do
-		before {Restaurant.create name: 'KFC'}
+		# before {Restaurant.create name: 'KFC'}
 		scenario 'user can delete a restaurant' do
 			visit '/restaurants'
+			sign_up
+			click_link 'Add a restaurant'
+		  fill_in 'Name', with: 'KFC'
+		  click_button 'Create Restaurant'
 			click_link 'Delete KFC'
 			expect(page).not_to have_content 'KFC'
 			expect(page).to have_content "Restaurant deleted"
 		end
 	end
 
+	feature 'User can only edit restaurants which they have created' do
 
-
+	  it "cannot edit another users restaurant" do
+	 	 sign_up
+	 	 click_link 'Add a restaurant'
+		 fill_in 'Name', with: 'KFC'
+		 click_button 'Create Restaurant'
+	 	 click_link('Sign out')
+	 	 sign_up_second_user
+	   expect(page).not_to have_link('Edit KFC')
+	  end
+  end
 
 
 end
