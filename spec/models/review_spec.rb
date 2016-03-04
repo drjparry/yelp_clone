@@ -18,5 +18,13 @@ describe Review, type: :model do
       expect(restaurant.average_rating).to eq 'N/A'
       end
     end
+
+    context 'One review' do
+      it 'returns that rating' do
+        restaurant = Restaurant.create(name: 'Ivy')
+        restaurant.reviews.create(rating: 4)
+        expect(restaurant.average_rating).to eq 4
+      end
+    end
   end
 end

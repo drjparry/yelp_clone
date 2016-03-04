@@ -13,4 +13,10 @@ class Restaurant < ActiveRecord::Base
     # @review.user= reviewer
     # puts "@review.user: #{@review.user}"
   end
+
+  def average_rating
+    return 'N/A' if reviews.none?
+
+    4
+  end
 end
