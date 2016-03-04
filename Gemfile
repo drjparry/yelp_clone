@@ -37,6 +37,7 @@ group :development, :test do
   gem 'byebug'
   gem 'devise'
   gem 'omniauth-facebook'
+  gem 'paperclip'
 end
 
 group :development do
