@@ -28,8 +28,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'devise'
 gem 'omniauth-facebook'
-gem 'paperclip'
 gem 'aws-sdk'
+gem 'paperclip', :git=> 'https://github.com/thoughtbot/paperclip', :ref => '523bd46c768226893f23889079a7aa9c73b57d68'
+gem 'fog'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
