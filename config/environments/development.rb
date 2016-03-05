@@ -12,8 +12,8 @@ Rails.application.configure do
       :s3_host_name => 's3-website.eu-central-1.amazonaws.com',
       :s3_region => 'eu-central-1'
     },
-    :url =>':s3_domain_url',
-    :path => '/:class/:attachment/:id_partition/:style/:filename'
+     :url =>':s3_domain_url',
+     :path => '/:class/:attachment/:id_partition/:style/:filename'
 
   }
 
